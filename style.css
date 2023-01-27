@@ -1,0 +1,357 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  'Poppins' , sans-serif;
+}
+
+
+.Box {
+    background-color: #54BAB9;
+    color: white; 
+}
+.Tleft {
+    margin-left: 50px;
+}
+.Tright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.TopHeading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1px;
+    flex-direction: row;
+}
+
+.userInfo {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Lisa {
+    margin-left: 15px;
+}
+
+.Body {
+    background-color: beige;
+    padding: 15px;
+}
+
+.sectop {
+    background-color: white;
+    color: #54BAB9;
+    font-size: 30px;
+}
+
+.secBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1px;
+    flex-direction: row;
+    margin: 20px;
+}
+.page {
+    font-size: 15px;
+    color: black;
+}
+.search {
+    border-radius: 20px;
+    background-color: antiquewhite;
+    width: 200px;
+    height: 25px;
+    border: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+/* .IMG {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1px;
+    flex-direction: row;
+    margin: 20px;
+} */
+/* .searchImg {
+    margin-left: 10px;
+} */
+.searchImg {
+    margin-left: -25px;
+    position: relative;
+    top: 3px;
+}
+
+.dropdownSelect {
+    border-radius: 15px;
+    width: 100px;
+}
+
+.dropDown {
+    display: inline-block;
+}
+
+.textright {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.RowPerPage {
+    margin-left: 1px;
+    color: #54BAB9;
+}
+.rowClass{
+    font-size: 13px;
+    color: #000;
+
+}
+.myBtn {
+    border-radius: 10px;
+    padding: 4px 8px;
+    background-color: #54BAB9;
+    color: white;
+    border: none;
+}
+
+.myBtn:hover {
+    background-color: #888;
+}
+
+.myBtn:active {
+    background-color: aqua;
+}
+
+.textbox2 {
+    margin-left: 87px;
+}
+.lable-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.input2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 1px;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.btn:hover {
+    background-color: #808080;
+}
+
+.btn:active {
+    background-color: #54BAB9;
+}
+
+
+/*Modal */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+
+  }
+  
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    border-radius: 20px;
+
+  }
+  
+  
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  
+  .close {
+    color: #54BAB9;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.input1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.modal-header {
+    text-align: center;
+}
+
+.textbox {
+    width: 15rem;
+    color: #000;
+    font-weight: bolder;
+    border-color: black;
+    border-radius: 10px;
+    padding: 6px;
+    margin-top: 3px;
+}
+
+/* Radio Buttom */
+
+  .wrapper{
+    display: inline-flex;
+    background: white;
+    /* height: 60px; */
+    width: 200px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 10px 17px;
+    margin-left: 0px;
+  }
+  .wrapper .option{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 5px;
+    border: 1px solid #000;
+
+    transition: all 0.3s ease;
+  }
+
+
+  .wrapper .option .dot{
+    height: 10px;
+    width: 10px;
+    background: #54BAB9;
+    border-radius: 50%;
+    position: relative;
+  }
+  .wrapper .option .dot::before{
+    position: absolute;
+    content: "";
+    top: 2px;
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    background: #54BAB9;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  #option-1:checked:checked ~ .option-1,
+  #option-2:checked:checked ~ .option-2{
+    border-color: #54BAB9;
+    background: #54BAB9;
+  }
+  #option-1:checked:checked ~ .option-1 .dot,
+  #option-2:checked:checked ~ .option-2 .dot{
+    background: #fff;
+  }
+  #option-1:checked:checked ~ .option-1 .dot::before,
+  #option-2:checked:checked ~ .option-2 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+  }
+  .wrapper .option span{
+    font-size: 20px;
+    color: #808080;
+  }
+  #option-1:checked:checked ~ .option-1 span,
+  #option-2:checked:checked ~ .option-2 span{
+    color: #fff;
+  }
+
+  /* Table */
+
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
