@@ -141,43 +141,45 @@
           </div>
         </div>
       </section>
-      <table class="styled-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Pet Name</th>
-                <th>Status</th>
-                <th>Pawrent</th>
-                <th>Breed</th>
-                <th>Gender</th>
-                <th>Date of Birth</th>
-                <th>Contact Ph No</th>
-                <th>Address</th>
-                <th> Edit</th>
-                <th> Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="active-row">
-                <td>A-oo12</td>
-                <td>CoCo</td>
-                <td>Ill</td>
-                <td>Kyaw Gyi</td>
-                <td>Golden Retriever</td>
-                <td>Male</td>
-                <td>1/1/1111</td>
-                <td>11-11-11-11</td>
-                <td>Yangon</td>
-                <td> <img src="editIcon.svg" width="25" height="auto"/> </td>
-                <td> <img src="deleteIcon.svg" onclick="remove()" width="25" height="auto"/> </td>
-            </tr>
-            <tr class="active-row">
-                <td>Melissa</td>
-                <td>5150</td>
-            </tr>
-            <!-- and so on... -->
-        </tbody>
-    </table>
+      <div class="Table">
+        <table class="styled-table">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>Pet Name</th>
+                  <th>Status</th>
+                  <th>Pawrent</th>
+                  <th>Breed</th>
+                  <th>Gender</th>
+                  <th>Date of Birth</th>
+                  <th>Contact Ph No</th>
+                  <th>Address</th>
+                  <th> Edit</th>
+                  <th> Delete</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="active-row">
+                  <td>A-oo12</td>
+                  <td>CoCo</td>
+                  <td>Ill</td>
+                  <td>Kyaw Gyi</td>
+                  <td>Golden Retriever</td>
+                  <td>Male</td>
+                  <td>1/1/1111</td>
+                  <td>11-11-11-11</td>
+                  <td>Yangon</td>
+                  <td> <img src="editIcon.svg" onclick="edit()" width="25" height="auto"/> </td>
+                  <td> <img src="deleteIcon.svg" onclick="remove()" width="25" height="auto"/> </td>
+              </tr>
+              <tr class="active-row">
+                  <td>Melissa</td>
+                  <td>5150</td>
+              </tr>
+              <!-- and so on... -->
+          </tbody>
+      </table>
+    </div>
     </div>
     <script src="./sweetAlert.js"></script>
     <script>
@@ -208,6 +210,18 @@
                     confirmButtonColor: '#d33',
                     cancelButtonColor: '#3085d6',
                     confirmButtonText: 'Delete'
+                }).then((result) => {
+                    
+                })
+      }
+      function edit() {
+        Swal.fire({
+                    title: 'Are you sure want to edit this patient?',
+                    icon: 'info',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Edit'
                 }).then((result) => {
                     
                 })
