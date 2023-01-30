@@ -84,37 +84,38 @@
                     <div class="modal-header">
                       <span class="close">&times;</span>
                     </div>
-                    <div class="modal-header">
+                    <form>
+                      <div class="modal-header">
                         <h5>Add New Patient</h4>
                         <p style="font-size: 15px;">Enter Patient Information Below</p>
                         </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;">Pet Name</label>
-                        <input type="text" class="textbox" placeholder="Pet Name">
+                        <input type="text" class="textbox" placeholder="Pet Name" name="petName" id="petName">
                       </div>
                       <div class="lable-div">  
                         <label class="label-style" style="font-size: 15px;">Status</label>
-                        <input type="text" class="textbox" placeholder="Status">
+                        <input type="text" class="textbox" placeholder="Status"name="statusName" id="statusName">
                       </div>
                        
                     </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;">Pawrent</label>
-                        <input type="text" class="textbox" placeholder="Pawrent">
+                        <input type="text" class="textbox" placeholder="Pawrent" name="pawrentName" id="pawrentName">
                       </div>
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px;">Pawrent</label>
-                        <input type="text" class="textbox" placeholder="Breed">
+                        <label class="label-style" style="font-size: 15px;">Breed</label>
+                        <input type="text" class="textbox" placeholder="Breed" name="breedName" id="breedName">
                       </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; margin-left: 20px;" >Gender</label>
                           <div class="wrapper">
-                            <input type="radio" name="select" id="option-1" checked>
-                            <input type="radio" name="select" id="option-2">
+                            <input type="radio" name="gender" id="gender" value="male" id="option-1" checked>
+                            <input type="radio" name="gender" id="gender" value="female" id="option-2">
                               <label for="option-1" class="option option-1">
                                 <div class="dot"></div>
                                 <span>Male</span>
@@ -127,33 +128,34 @@
                       </div>
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; margin-left: 80px;">Date of Birth</label>
-                        <input type="date" class="textbox textbox2" style="margin-right: 20px;">
+                        <input type="date" class="textbox textbox2" style="margin-right: 20px;" name="dobName" id="dobName">
                       </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; " >Contant Ph NO.</label>
-                        <input type="number" class="textbox" placeholder="Contant Ph NO.">
+                        <input type="number" class="textbox" placeholder="Contant Ph NO." name="phName" id="phName">
                       </div>
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;" >Address</label>
-                        <input type="text" class="textbox" placeholder="Address">
+                        <input type="text" class="textbox" placeholder="Address" name="addressName" id="addressName">
                       </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; " >City</label>
-                        <input type="number" class="textbox" placeholder="City">
+                        <input type="number" class="textbox" placeholder="City" name="cityName" id="cityName">
                       </div>
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;" >Town</label>
-                        <input type="text" class="textbox" placeholder="Town">
+                        <input type="text" class="textbox" placeholder="Town" name="townName" id="townName">
                       </div>
                     </div>
                     <div class="input2">
                       <button class="btn">Save</button>
                       <button class="btn">Cancel</button>
                     </div>
+                    </form>
                   </div>
                 </div>
               </span>
@@ -167,7 +169,7 @@
           </div>
         </div>
       </section>
-      <div class="Table">
+      <div id="table">
         <table class="styled-table">
           <thead>
               <tr>
@@ -201,21 +203,128 @@
                         <img src="more.png" width="25" height="auto"/>
                       </div>
                       <div id="myDropdown" class="dropdown-content">
-                        <a href="#home" onclick="edit()">Edit <img src="editIcon.svg" width="25" height="auto"</a>
-                        <a href="#about" onclick="remove()">Delete <img src="deleteIcon.svg" width="25" height="auto"</a>
+                        <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
+                        <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
                       </div>
                     </div>
                     </td>
-                  
               </tr>
-              <!-- and so on... -->
           </tbody>
       </table>
     </div>
     </div>
     <script src="./sweetAlert.js"></script>
     <script>
+//add save and cancel 
+      var rlndex,
+        table = document.getElementById("table")
+      function checkEmptuInput()
+      {
+        var isEmpty = false,
+          petName=document.getElementById("petName").value,
+          statusName=document.getElementById("statusName").value,
+          pawrentName=document.getElementById("pawrentName").value,
+          breedName=document.getElementById("breedName").value,
+          dobName=document.getElementById("dobName").value,
+          phName=document.getElementById("phName").value,
+          addressName=document.getElementById("addressName").value,
+          cityName=document.getElementById("cityName").value,
+          townName=document.getElementById("townName").value;
 
+          if(petName ==="" ){
+            alert("Pet Name Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(statusName ==="" ){
+            alert("Pet Name Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(pawrentName ==="" ){
+            alert("Pawrent Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(breedName ==="" ){
+            alert("Breed Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(dobName ==="" ){
+            alert("Date Of Birth Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(phName ==="" ){
+            alert("Ph No. Can't Be Empty")
+            isEmpty = true;
+          }
+          else if(addressName ==="" ){
+            alert("Address Can't Be Empty")
+            isEmpty = true;
+          }
+          if(cityName ==="" ){
+            alert("City Can't Be Empty")
+            isEmpty = true;
+          }
+          if(townName ==="" ){
+            alert("Town Can't Be Empty")
+            isEmpty = true;
+          }
+          return isEmpty; 
+      }
+      
+      {
+        if(!checkEmptuInput()){
+        var newRow = table.insertRow(table.length),
+          cell1 = newRow.insertCell(0),
+          cell2 = newRow.insertCell(1),
+          cell3 = newRow.insertCell(2),
+          cell4 = newRow.insertCell(3),
+          cell5 = newRow.insertCell(4),
+          cell6 = newRow.insertCell(5),
+          cell7 = newRow.insertCell(6),
+          cell8 = newRow.insertCell(7),
+          cell9 = newRow.insertCell(8),
+          cell10 = newRow.insertCell(9)
+
+          petName = document.getElementById("petName").value,
+          statusName = document.getElementById("statusName").value,
+          pawrentName = document.getElementById("pawrentName").value,
+          breedName = document.getElementById("breedName").value,
+          gender = document.getElementById("gender").value,
+          dobName = document.getElementById("dobName").value,
+          phName = document.getElementById("phName").value,
+          addressName = document.getElementById("addressName").value,
+          cityName = document.getElementById("cityName").value,
+          townName = document.getElementById("townName").value,
+
+          cell1.innerHTML = petName;
+          cell2.innerHTML = statusName;
+          cell3.innerHTML = pawrentName;
+          cell4.innerHTML = breedName;
+          cell5.innerHTML = gender;
+          cell6.innerHTML = dobName;
+          cell7.innerHTML = phName;
+          cell8.innerHTML = addressName;
+          cell9.innerHTML = cityName;
+          cell10.innerHTML = townName;
+
+          selectedRowToInput();
+      }
+      }
+      
+
+
+//add save and cancel 
+
+          let radioVal;
+
+          const radios = document.querySelectorAll('input[name="gender"]');
+          radios.forEach(radio => {
+            radio.addEventListener('click', function () {
+              radioVal = radio.value;
+              console.log(radioVal);
+            });
+          });
+
+// Dot function
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }
@@ -233,6 +342,9 @@
         }
       }
 
+// Dot Function
+
+// Modal function
 
       var modal = document.getElementById("myModal");
 
@@ -277,7 +389,7 @@
                     
                 })
       } 
-
+// Modal Function
     </script>
   </body>
 </html>
