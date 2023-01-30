@@ -356,7 +356,7 @@
     color: #54BAB9;
 }
 
-.Table {
+#table {
     display: flex;
     justify-content: center;
 }

@@ -86,7 +86,7 @@
                     </div>
                     <form>
                       <div class="modal-header">
-                        <h5>Add New Patient</h4>
+                        <h5>Add New Patient</h5>
                         <p style="font-size: 15px;">Enter Patient Information Below</p>
                         </div>
                     <div class="input1">
@@ -97,8 +97,7 @@
                       <div class="lable-div">  
                         <label class="label-style" style="font-size: 15px;">Status</label>
                         <input type="text" class="textbox" placeholder="Status"name="statusName" id="statusName">
-                      </div>
-                       
+                      </div> 
                     </div>
                     <div class="input1">
                       <div class="lable-div">
@@ -114,8 +113,8 @@
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; margin-left: 20px;" >Gender</label>
                           <div class="wrapper">
-                            <input type="radio" name="gender" id="gender" value="male" id="option-1" checked>
-                            <input type="radio" name="gender" id="gender" value="female" id="option-2">
+                            <input type="radio" name="gender" value="male" id="option-1" checked>
+                            <input type="radio" name="gender" value="female" id="option-2">
                               <label for="option-1" class="option option-1">
                                 <div class="dot"></div>
                                 <span>Male</span>
@@ -144,7 +143,7 @@
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; " >City</label>
-                        <input type="number" class="textbox" placeholder="City" name="cityName" id="cityName">
+                        <input type="text" class="textbox" placeholder="City" name="cityName" id="cityName">
                       </div>
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;" >Town</label>
@@ -152,7 +151,7 @@
                       </div>
                     </div>
                     <div class="input2">
-                      <button class="btn">Save</button>
+                      <button class="btn" onclick="addHtmTableRow()">Save</button>
                       <button class="btn">Cancel</button>
                     </div>
                     </form>
@@ -169,56 +168,56 @@
           </div>
         </div>
       </section>
-      <div id="table">
-        <table class="styled-table">
-          <thead>
-              <tr>
-                  <th>ID</th>
-                  <th>Pet Name</th>
-                  <th>Status</th>
-                  <th>Pawrent</th>
-                  <th>Breed</th>
-                  <th>Gender</th>
-                  <th>Date of Birth</th>
-                  <th>Contact Ph No</th>
-                  <th>Address</th>
-                  <th> Edit/Delete</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td>A-oo12</td>
-                  <td>CoCo</td>
-                  <td>Ill</td>
-                  <td>Kyaw Gyi</td>
-                  <td>Golden Retriever</td>
-                  <td>Male</td>
-                  <td>1/1/1111</td>
-                  <td>11-11-11-11</td>
-                  <td>Yangon</td>
-                  <td> 
-                    <!-- <img src="more.png" width="25" height="auto"/>  -->
-                    <div class="dropdown">
-                      <div onclick="myFunction()" class="dropbtn">
-                        <img src="more.png" width="25" height="auto"/>
+        <div id="table">
+          <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pet Name</th>
+                    <th>Status</th>
+                    <th>Pawrent</th>
+                    <th>Breed</th>
+                    <th>Gender</th>
+                    <th>Date of Birth</th>
+                    <th>Contact Ph No</th>
+                    <th>Address</th>
+                    <th> Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>A-oo12</td>
+                    <td>CoCo</td>
+                    <td>Ill</td>
+                    <td>Kyaw Gyi</td>
+                    <td>Golden Retriever</td>
+                    <td>Male</td>
+                    <td>1/1/1111</td>
+                    <td>11-11-11-11</td>
+                    <td>Yangon</td>
+                    <td> 
+                      <!-- <img src="more.png" width="25" height="auto"/>  -->
+                      <div class="dropdown">
+                        <div onclick="myFunction()" class="dropbtn">
+                          <img src="more.png" width="25" height="auto"/>
+                        </div>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
+                          <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
+                        </div>
                       </div>
-                      <div id="myDropdown" class="dropdown-content">
-                        <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
-                        <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
-                      </div>
-                    </div>
-                    </td>
-              </tr>
-          </tbody>
-      </table>
-    </div>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
     </div>
     <script src="./sweetAlert.js"></script>
     <script>
 //add save and cancel 
       var rlndex,
         table = document.getElementById("table")
-      function checkEmptuInput()
+      function checkEmptyInput()
       {
         var isEmpty = false,
           petName=document.getElementById("petName").value,
@@ -270,8 +269,11 @@
           return isEmpty; 
       }
       
-      {
-        if(!checkEmptuInput()){
+
+      function addHtmTableRow(){
+
+        if(!checkEmptyInput()){
+        console.log(document.getElementById("petName").value)
         var newRow = table.insertRow(table.length),
           cell1 = newRow.insertCell(0),
           cell2 = newRow.insertCell(1),
@@ -282,7 +284,7 @@
           cell7 = newRow.insertCell(6),
           cell8 = newRow.insertCell(7),
           cell9 = newRow.insertCell(8),
-          cell10 = newRow.insertCell(9)
+          cell10 = newRow.insertCell(9),
 
           petName = document.getElementById("petName").value,
           statusName = document.getElementById("statusName").value,
@@ -293,24 +295,44 @@
           phName = document.getElementById("phName").value,
           addressName = document.getElementById("addressName").value,
           cityName = document.getElementById("cityName").value,
-          townName = document.getElementById("townName").value,
+          townName = document.getElementById("townName").value;
 
-          cell1.innerHTML = petName;
-          cell2.innerHTML = statusName;
-          cell3.innerHTML = pawrentName;
-          cell4.innerHTML = breedName;
-          cell5.innerHTML = gender;
-          cell6.innerHTML = dobName;
-          cell7.innerHTML = phName;
-          cell8.innerHTML = addressName;
-          cell9.innerHTML = cityName;
-          cell10.innerHTML = townName;
+        cell1.innerHTML = petName;
+        cell2.innerHTML = statusName;
+        cell3.innerHTML = pawrentName;
+        cell4.innerHTML = breedName;
+        cell5.innerHTML = gender;
+        cell6.innerHTML = dobName;
+        cell7.innerHTML = phName;
+        cell8.innerHTML = addressName;
+        cell9.innerHTML = cityName;
+        cell10.innerHTML = townName;
 
-          selectedRowToInput();
+        selectedRowToInput();
       }
       }
-      
 
+      function selectedRowToInput()
+      {
+        for(var i=1;i < table.row.length;i++)
+        {
+          table.row[i].onclick = function()
+          {
+            rIndex = this.rowIndex;
+            document.getElementById("petName").value = this.cells[0].innerHTML;
+            document.getElementById("statusName").value = this.cells[1].innerHTML;
+            document.getElementById("pawrentName").value = this.cells[3].innerHTML;
+            document.getElementById("breedName").value = this.cells[4].innerHTML;
+            document.getElementById("gender").value = this.cells[5].innerHTML;
+            document.getElementById("dobName").value = this.cells[6].innerHTML;
+            document.getElementById("phName").value = this.cells[7].innerHTML;
+            document.getElementById("addressName").value = this.cells[8].innerHTML;
+            document.getElementById("cityName").value = this.cells[9].innerHTML;
+            document.getElementById("townName").value = this.cells[10].innerHTML;
+            
+          }
+        }
+      }
 
 //add save and cancel 
 
