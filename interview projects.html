@@ -8,6 +8,32 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,400&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .dropbtn {
+        cursor: pointer;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown a:hover {background-color: #ddd;}
+      
+      .show {display: block;}
+      </style>
   </head>
   <body>
     <div class="MainScreen">
@@ -154,24 +180,10 @@
                   <th>Date of Birth</th>
                   <th>Contact Ph No</th>
                   <th>Address</th>
-                  <th> Edit</th>
-                  <th> Delete</th>
+                  <th> Edit/Delete</th>
               </tr>
           </thead>
           <tbody>
-              <tr class="active-row">
-                  <td>A-oo12</td>
-                  <td>CoCo</td>
-                  <td>Ill</td>
-                  <td>Kyaw Gyi</td>
-                  <td>Golden Retriever</td>
-                  <td>Male</td>
-                  <td>1/1/1111</td>
-                  <td>11-11-11-11</td>
-                  <td>Yangon</td>
-                  <td> <img src="editIcon.svg" onclick="edit()" width="25" height="auto"/> </td>
-                  <td> <img src="deleteIcon.svg" onclick="remove()" width="25" height="auto"/> </td>
-              </tr>
               <tr>
                 <td>A-oo12</td>
                   <td>CoCo</td>
@@ -182,8 +194,19 @@
                   <td>1/1/1111</td>
                   <td>11-11-11-11</td>
                   <td>Yangon</td>
-                  <td> <img src="editIcon.svg" onclick="edit()" width="25" height="auto"/> </td>
-                  <td> <img src="deleteIcon.svg" onclick="remove()" width="25" height="auto"/> </td>
+                  <td> 
+                    <!-- <img src="more.png" width="25" height="auto"/>  -->
+                    <div class="dropdown">
+                      <div onclick="myFunction()" class="dropbtn">
+                        <img src="more.png" width="25" height="auto"/>
+                      </div>
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="#home" onclick="edit()">Edit <img src="editIcon.svg" width="25" height="auto"</a>
+                        <a href="#about" onclick="remove()">Delete <img src="deleteIcon.svg" width="25" height="auto"</a>
+                      </div>
+                    </div>
+                    </td>
+                  
               </tr>
               <!-- and so on... -->
           </tbody>
@@ -192,6 +215,25 @@
     </div>
     <script src="./sweetAlert.js"></script>
     <script>
+
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+
+
       var modal = document.getElementById("myModal");
 
       var btn = document.getElementById("myBtn");
