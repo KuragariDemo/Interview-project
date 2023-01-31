@@ -1,103 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .dropbtn {
-        cursor: pointer;
-      }
-      
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-      .dropdown a:hover {background-color: #ddd;}
-      
-      .show {display: block;}
-      </style>
-  </head>
-  <body>
-    <div class="MainScreen">
-      <div class="Box">
-        <div class="TopHeading">
-          <div class="Tleft">
-            <div class="flexbox2"><img src="Logo(2).png" /></div>
-          </div>
-          <div class="Tright">
-            <div class="flexbox1"><img src="Notifications.png" /></div>
-            <div class="userInfo">
-              <img src="user image.png" />
-              <div class="Lisa">
-                <div>Lisa</div>
-                <div>Operator</div>
-              </div>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200;1,400&display=swap"
+    rel="stylesheet" />
+  <style>
+    .dropbtn {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="MainScreen">
+    <div class="Box">
+      <div class="TopHeading">
+        <div class="Tleft">
+          <div class="flexbox2"><img src="Logo(2).png" /></div>
+        </div>
+        <div class="Tright">
+          <div class="flexbox1"><img src="Notifications.png" /></div>
+          <div class="userInfo">
+            <img src="user image.png" />
+            <div class="Lisa">
+              <div>Lisa</div>
+              <div>Operator</div>
             </div>
           </div>
         </div>
       </div>
-      <section class="Body">
-        <div class="sectop">
-          <div class="secBody">
-            <div class="textleft">
-              <div class="list">Patient List</div>
-              <div class="IMG">
-                <input type="text" placeholder="Search Bar" class="search" />
-                <span class="searchImg"> <img src="search.png" /> </span>
-              </div>
-              <div class="dropDown">
-                <select class="dropdownSelect">
-                  <option class="OP" selected>Status All</option>
-                  <option class="OP">Option2</option>
-                  <option class="OP">Option5</option>
-                </select>
-                <select class="dropdownSelect">
-                  <option class="OP" selected>Breed All</option>
-                  <option class="OP">Option3</option>
-                  <option class="OP">Option4</option>
-                </select>
-              </div>
+    </div>
+    <section class="Body">
+      <div class="sectop">
+        <div class="secBody">
+          <div class="textleft">
+            <div class="list">Patient List</div>
+            <div class="IMG">
+              <input type="text" placeholder="Search Bar" class="search" />
+              <span class="searchImg"> <img src="search.png" /> </span>
             </div>
-            <div class="textright">
-              <span>
-                <button id="myBtn" class="myBtn">+ Add New Patient</button>
-                <div id="myModal" class="modal">
-                  <div class="modal-content">
+            <div class="dropDown">
+              <select class="dropdownSelect">
+                <option class="OP" selected>Status All</option>
+                <option class="OP">Option2</option>
+                <option class="OP">Option5</option>
+              </select>
+              <select class="dropdownSelect">
+                <option class="OP" selected>Breed All</option>
+                <option class="OP">Option3</option>
+                <option class="OP">Option4</option>
+              </select>
+            </div>
+          </div>
+          <div class="textright">
+            <span>
+              <button id="myBtn" class="myBtn">+ Add New Patient</button>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times;</span>
+                  </div>
+                  <form>
                     <div class="modal-header">
-                      <span class="close">&times;</span>
+                      <h5>Add New Patient</h5>
+                      <p style="font-size: 15px;">Enter Patient Information Below</p>
                     </div>
-                    <form>
-                      <div class="modal-header">
-                        <h5>Add New Patient</h5>
-                        <p style="font-size: 15px;">Enter Patient Information Below</p>
-                        </div>
                     <div class="input1">
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;">Pet Name</label>
                         <input type="text" class="textbox" placeholder="Pet Name" name="petName" id="petName">
                       </div>
-                      <div class="lable-div">  
+                      <div class="lable-div">
                         <label class="label-style" style="font-size: 15px;">Status</label>
-                        <input type="text" class="textbox" placeholder="Status"name="statusName" id="statusName">
-                      </div> 
+                        <input type="text" class="textbox" placeholder="Status" name="statusName" id="statusName">
+                      </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
@@ -111,307 +116,283 @@
                     </div>
                     <div class="input1">
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px; margin-left: 20px;" >Gender</label>
-                          <div class="wrapper">
-                            <input type="radio" name="gender" value="male" id="option-1" checked>
-                            <input type="radio" name="gender" value="female" id="option-2">
-                              <label for="option-1" class="option option-1">
-                                <div class="dot"></div>
-                                <span>Male</span>
-                                </label>
-                              <label for="option-2" class="option option-2">
-                                <div class="dot"></div>
-                                <span>Female</span>
-                              </label>
-                          </div>
+                        <label class="label-style" style="font-size: 15px; margin-left: 20px;">Gender</label>
+                        <div class="wrapper">
+                          <input type="radio" name="gender" value="male" id="option-1" checked>
+                          <input type="radio" name="gender" value="female" id="option-2">
+                          <label for="option-1" class="option option-1">
+                            <div class="dot"></div>
+                            <span>Male</span>
+                          </label>
+                          <label for="option-2" class="option option-2">
+                            <div class="dot"></div>
+                            <span>Female</span>
+                          </label>
+                        </div>
                       </div>
                       <div class="lable-div">
                         <label class="label-style" style="font-size: 15px; margin-left: 80px;">Date of Birth</label>
-                        <input type="date" class="textbox textbox2" style="margin-right: 20px;" name="dobName" id="dobName">
+                        <input type="date" class="textbox textbox2" style="margin-right: 20px;" name="dobName"
+                          id="dobName">
                       </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px; " >Contant Ph NO.</label>
+                        <label class="label-style" style="font-size: 15px; ">Contant Ph NO.</label>
                         <input type="number" class="textbox" placeholder="Contant Ph NO." name="phName" id="phName">
                       </div>
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px;" >Address</label>
+                        <label class="label-style" style="font-size: 15px;">Address</label>
                         <input type="text" class="textbox" placeholder="Address" name="addressName" id="addressName">
                       </div>
                     </div>
                     <div class="input1">
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px; " >City</label>
+                        <label class="label-style" style="font-size: 15px; ">City</label>
                         <input type="text" class="textbox" placeholder="City" name="cityName" id="cityName">
                       </div>
                       <div class="lable-div">
-                        <label class="label-style" style="font-size: 15px;" >Town</label>
+                        <label class="label-style" style="font-size: 15px;">Town</label>
                         <input type="text" class="textbox" placeholder="Town" name="townName" id="townName">
                       </div>
                     </div>
                     <div class="input2">
-                      <button class="btn" onclick="addHtmTableRow()">Save</button>
-                      <button class="btn">Cancel</button>
+                      <button type="button" class="btn" onclick="addHtmTableRow()">Save</button>
+                      <button type="button" class="btn">Cancel</button>
                     </div>
-                    </form>
-                  </div>
+                  </form>
                 </div>
-              </span>
-              <span>
-                <span class="rowClass">Row per pages :</span>
-                <select class="RowPerPage">
-                  <option>10</option>
-                </select>
-              </span>
-            </div>
+              </div>
+            </span>
+            <span>
+              <span class="rowClass">Row per pages :</span>
+              <select class="RowPerPage">
+                <option>10</option>
+              </select>
+            </span>
           </div>
         </div>
-      </section>
-        <div id="table">
-          <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Pet Name</th>
-                    <th>Status</th>
-                    <th>Pawrent</th>
-                    <th>Breed</th>
-                    <th>Gender</th>
-                    <th>Date of Birth</th>
-                    <th>Contact Ph No</th>
-                    <th>Address</th>
-                    <th> Edit/Delete</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td>A-oo12</td>
-                    <td>CoCo</td>
-                    <td>Ill</td>
-                    <td>Kyaw Gyi</td>
-                    <td>Golden Retriever</td>
-                    <td>Male</td>
-                    <td>1/1/1111</td>
-                    <td>11-11-11-11</td>
-                    <td>Yangon</td>
-                    <td> 
-                      <!-- <img src="more.png" width="25" height="auto"/>  -->
-                      <div class="dropdown">
-                        <div onclick="myFunction()" class="dropbtn">
-                          <img src="more.png" width="25" height="auto"/>
-                        </div>
-                        <div id="myDropdown" class="dropdown-content">
-                          <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
-                          <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
-                        </div>
-                      </div>
-                      </td>
-                </tr>
-            </tbody>
-        </table>
       </div>
+    </section>
+    <div class="table">
+      <table id="table" class="styled-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Pet Name</th>
+            <th>Status</th>
+            <th>Pawrent</th>
+            <th>Breed</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Contact Ph No</th>
+            <th>Address</th>
+            <th> Edit/Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P-1</td>
+            <td>CoCo</td>
+            <td>Ill</td>
+            <td>Kyaw Gyi</td>
+            <td>Golden Retriever</td>
+            <td>Male</td>
+            <td>1/1/1111</td>
+            <td>11-11-11-11</td>
+            <td>Yangon</td>
+            <td>
+              <!-- <img src="more.png" width="25" height="auto"/>  -->
+              <div class="dropdown">
+                <div onclick="myFunction()" class="dropbtn">
+                  <img src="more.png" width="25" height="auto" />
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
+                  <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <script src="./sweetAlert.js"></script>
-    <script>
-//add save and cancel 
-      var rlndex,
-        table = document.getElementById("table")
-      function checkEmptyInput()
-      {
-        var isEmpty = false,
-          petName=document.getElementById("petName").value,
-          statusName=document.getElementById("statusName").value,
-          pawrentName=document.getElementById("pawrentName").value,
-          breedName=document.getElementById("breedName").value,
-          dobName=document.getElementById("dobName").value,
-          phName=document.getElementById("phName").value,
-          addressName=document.getElementById("addressName").value,
-          cityName=document.getElementById("cityName").value,
-          townName=document.getElementById("townName").value;
+  </div>
+  <script src="./sweetAlert.js"></script>
+  <script>
 
-          if(petName ==="" ){
-            alert("Pet Name Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(statusName ==="" ){
-            alert("Pet Name Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(pawrentName ==="" ){
-            alert("Pawrent Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(breedName ==="" ){
-            alert("Breed Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(dobName ==="" ){
-            alert("Date Of Birth Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(phName ==="" ){
-            alert("Ph No. Can't Be Empty")
-            isEmpty = true;
-          }
-          else if(addressName ==="" ){
-            alert("Address Can't Be Empty")
-            isEmpty = true;
-          }
-          if(cityName ==="" ){
-            alert("City Can't Be Empty")
-            isEmpty = true;
-          }
-          if(townName ==="" ){
-            alert("Town Can't Be Empty")
-            isEmpty = true;
-          }
-          return isEmpty; 
+    var radioVal;
+
+    const radios = document.querySelectorAll('input[name="gender"]');
+    radios.forEach(radio => {
+      radio.addEventListener('click', function () {
+        radioVal = radio.value;
+      });
+    });
+
+    //add save and cancel 
+    var rlndex, table = document.getElementById("table");
+
+    function checkEmptyInput() {
+      let isEmpty = false;
+      const petName = document.getElementById("petName").value;
+      const statusName = document.getElementById("statusName").value;
+      const pawrentName = document.getElementById("pawrentName").value;
+      const breedName = document.getElementById("breedName").value;
+      const dobName = document.getElementById("dobName").value;
+      const phName = document.getElementById("phName").value;
+      const addressName = document.getElementById("addressName").value;
+      const cityName = document.getElementById("cityName").value;
+      const townName = document.getElementById("townName").value;
+      if (!petName || !statusName || !pawrentName || !breedName || !dobName || !phName || !addressName || !cityName || !townName) {
+        isEmpty = true;
       }
-      
+      if (isEmpty) {
+        alert('Please Fill All Fields');
+      }
+      return isEmpty;
+    }
 
-      function addHtmTableRow(){
+    function addHtmTableRow() {
+      if (!checkEmptyInput()) {
+        const currentRowNo = table.rows.length;
+        const newRow = table.insertRow(table.length);
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        const cell6 = newRow.insertCell(5);
+        const cell7 = newRow.insertCell(6);
+        const cell8 = newRow.insertCell(7);
+        const cell9 = newRow.insertCell(8);
+        const cell10 = newRow.insertCell(9);
+        const petName = document.getElementById("petName").value;
+        const statusName = document.getElementById("statusName").value;
+        const pawrentName = document.getElementById("pawrentName").value;
+        const breedName = document.getElementById("breedName").value;
+        const dobName = document.getElementById("dobName").value;
+        const phName = document.getElementById("phName").value;
+        const addressName = document.getElementById("addressName").value;
+        const cityName = document.getElementById("cityName").value;
+        const townName = document.getElementById("townName").value;
 
-        if(!checkEmptyInput()){
-        console.log(document.getElementById("petName").value)
-        var newRow = table.insertRow(table.length),
-          cell1 = newRow.insertCell(0),
-          cell2 = newRow.insertCell(1),
-          cell3 = newRow.insertCell(2),
-          cell4 = newRow.insertCell(3),
-          cell5 = newRow.insertCell(4),
-          cell6 = newRow.insertCell(5),
-          cell7 = newRow.insertCell(6),
-          cell8 = newRow.insertCell(7),
-          cell9 = newRow.insertCell(8),
-          cell10 = newRow.insertCell(9),
-
-          petName = document.getElementById("petName").value,
-          statusName = document.getElementById("statusName").value,
-          pawrentName = document.getElementById("pawrentName").value,
-          breedName = document.getElementById("breedName").value,
-          gender = document.getElementById("gender").value,
-          dobName = document.getElementById("dobName").value,
-          phName = document.getElementById("phName").value,
-          addressName = document.getElementById("addressName").value,
-          cityName = document.getElementById("cityName").value,
-          townName = document.getElementById("townName").value;
-
-        cell1.innerHTML = petName;
-        cell2.innerHTML = statusName;
-        cell3.innerHTML = pawrentName;
-        cell4.innerHTML = breedName;
-        cell5.innerHTML = gender;
-        cell6.innerHTML = dobName;
-        cell7.innerHTML = phName;
-        cell8.innerHTML = addressName;
-        cell9.innerHTML = cityName;
-        cell10.innerHTML = townName;
-
+        if (radioVal === undefined) {
+          radioVal = 'male';
+        }
+       
+        cell1.innerHTML = `P-${currentRowNo}`;
+        cell2.innerHTML = petName;
+        cell3.innerHTML = statusName;
+        cell4.innerHTML = pawrentName;
+        cell5.innerHTML = breedName;
+        cell6.innerHTML = radioVal;
+        cell7.innerHTML = dobName;
+        cell8.innerHTML = phName;
+        cell9.innerHTML = `${addressName}, ${townName}, ${cityName}`;
+        cell10.innerHTML = `
+        <div class="dropdown">
+                <div onclick="myFunction()" class="dropbtn">
+                  <img src="more.png" width="25" height="auto" />
+                </div>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
+                  <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
+                </div>
+        </div>
+        `;
         selectedRowToInput();
       }
-      }
+    }
 
-      function selectedRowToInput()
-      {
-        for(var i=1;i < table.row.length;i++)
-        {
-          table.row[i].onclick = function()
-          {
-            rIndex = this.rowIndex;
-            document.getElementById("petName").value = this.cells[0].innerHTML;
-            document.getElementById("statusName").value = this.cells[1].innerHTML;
-            document.getElementById("pawrentName").value = this.cells[3].innerHTML;
-            document.getElementById("breedName").value = this.cells[4].innerHTML;
-            document.getElementById("gender").value = this.cells[5].innerHTML;
-            document.getElementById("dobName").value = this.cells[6].innerHTML;
-            document.getElementById("phName").value = this.cells[7].innerHTML;
-            document.getElementById("addressName").value = this.cells[8].innerHTML;
-            document.getElementById("cityName").value = this.cells[9].innerHTML;
-            document.getElementById("townName").value = this.cells[10].innerHTML;
-            
+    function selectedRowToInput() {
+      for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].onclick = function () {
+          rIndex = this.rowIndex;
+          document.getElementById("petName").value = this.cells[0].innerHTML;
+          document.getElementById("statusName").value = this.cells[1].innerHTML;
+          document.getElementById("pawrentName").value = this.cells[3].innerHTML;
+          document.getElementById("breedName").value = this.cells[4].innerHTML;
+          document.getElementById("gender").value = this.cells[5].innerHTML;
+          document.getElementById("dobName").value = this.cells[6].innerHTML;
+          document.getElementById("phName").value = this.cells[7].innerHTML;
+          document.getElementById("addressName").value = this.cells[8].innerHTML;
+          document.getElementById("cityName").value = this.cells[9].innerHTML;
+          document.getElementById("townName").value = this.cells[10].innerHTML;
+
+        }
+      }
+    }
+
+    //add save and cancel 
+
+    // Dot function
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
           }
         }
       }
+    }
 
-//add save and cancel 
+    // Dot Function
 
-          let radioVal;
+    // Modal function
 
-          const radios = document.querySelectorAll('input[name="gender"]');
-          radios.forEach(radio => {
-            radio.addEventListener('click', function () {
-              radioVal = radio.value;
-              console.log(radioVal);
-            });
-          });
+    var modal = document.getElementById("myModal");
 
-// Dot function
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
+    var btn = document.getElementById("myBtn");
 
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
+    var span = document.getElementsByClassName("close")[0];
 
-// Dot Function
+    btn.onclick = function () {
+      modal.style.display = "block";
+    };
 
-// Modal function
+    span.onclick = function () {
+      modal.style.display = "none";
+    };
 
-      var modal = document.getElementById("myModal");
-
-      var btn = document.getElementById("myBtn");
-
-      var span = document.getElementsByClassName("close")[0];
-
-      btn.onclick = function () {
-        modal.style.display = "block";
-      };
-
-      span.onclick = function () {
+    window.onclick = function (event) {
+      if (event.target == modal) {
         modal.style.display = "none";
-      };
-
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      };
-      function remove() {
-        Swal.fire({
-                    title: 'Are you sure want to delete this patient?',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                    confirmButtonText: 'Delete'
-                }).then((result) => {
-                    
-                })
       }
-      function edit() {
-        Swal.fire({
-                    title: 'Are you sure want to edit this patient?',
-                    icon: 'info',
-                    showCancelButton: true,
-                    confirmButtonColor: '#d33',
-                    cancelButtonColor: '#3085d6',
-                    confirmButtonText: 'Edit'
-                }).then((result) => {
-                    
-                })
-      } 
+    };
+    function remove() {
+      Swal.fire({
+        title: 'Are you sure want to delete this patient?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Delete'
+      }).then((result) => {
+
+      })
+    }
+    function edit() {
+      Swal.fire({
+        title: 'Are you sure want to edit this patient?',
+        icon: 'info',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Edit'
+      }).then((result) => {
+
+      })
+    }
 // Modal Function
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
