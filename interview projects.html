@@ -158,7 +158,7 @@
                     </div>
                     <div class="input2">
                       <button type="button" class="btn" onclick="addHtmTableRow()">Save</button>
-                      <button type="button" class="btn">Cancel</button>
+                      <button type="button" class="btn" onclick="onCancel()">Cancel</button>
                     </div>
                   </form>
                 </div>
@@ -175,7 +175,7 @@
       </div>
     </section>
     <div class="table">
-      <table id="table" class="styled-table">
+      <table id="table" class="styled-table  fet">
         <thead>
           <tr>
             <th>ID</th>
@@ -230,7 +230,7 @@
       });
     });
 
-    //add save and cancel 
+    //add function
     var rlndex, table = document.getElementById("table");
 
     function checkEmptyInput() {
@@ -302,6 +302,7 @@
         </div>
         `;
         selectedRowToInput();
+        clearData();
       }
     }
 
@@ -320,11 +321,41 @@
           document.getElementById("cityName").value = this.cells[9].innerHTML;
           document.getElementById("townName").value = this.cells[10].innerHTML;
 
+          
+
         }
       }
     }
 
-    //add save and cancel 
+    //add function
+
+    // clear function
+
+    function clearData(){
+       document.getElementById("petName").value = ""
+       document.getElementById("statusName").value = ""
+       document.getElementById("pawrentName").value = ""
+       document.getElementById("breedName").value = ""
+       document.getElementById("dobName").value = ""
+       document.getElementById("phName").value = ""
+       document.getElementById("addressName").value = ""
+       document.getElementById("cityName").value = ""
+       document.getElementById("townName").value = ""
+    }
+
+    // clear function
+
+    // Delete Function
+
+
+    function remove(){
+        table.deleteRow(rLndex);
+
+    }
+    // Delete Function
+
+    
+
 
     // Dot function
     function myFunction() {
@@ -350,6 +381,10 @@
 
     var modal = document.getElementById("myModal");
 
+    function onCancel(){
+      modal.style.display = "none";
+    }
+
     var btn = document.getElementById("myBtn");
 
     var span = document.getElementsByClassName("close")[0];
@@ -367,6 +402,11 @@
         modal.style.display = "none";
       }
     };
+// Modal Function
+
+
+// edit delete model
+    
     function remove() {
       Swal.fire({
         title: 'Are you sure want to delete this patient?',
@@ -391,7 +431,61 @@
 
       })
     }
-// Modal Function
+
+// edit delete model
+
+
+// edit Function
+
+    let fet = document.querySelector("fet"),rIndex;
+
+      for (let i = 1; i < table.row.length; i++){
+        table.row[i].onclick = function(){
+          rTndex = this.rowIndex;
+
+          document.getElementById("petName").value = this.cells[1].innerHTML;
+          document.getElementById("statusName").value = this.cells[2].innerHTML;
+          document.getElementById("pawrentName").value = this.cells[3].innerHTML;
+          document.getElementById("breedName").value = this.cells[4].innerHTML;
+          document.getElementById("gender").value = this.cells[5].innerHTML;
+          document.getElementById("dobName").value = this.cells[6].innerHTML;
+          document.getElementById("phName").value = this.cells[7].innerHTML;
+          document.getElementById("addressName").value = this.cells[8].innerHTML;
+          document.getElementById("cityName").value = this.cells[9].innerHTML;
+          document.getElementById("townName").value = this.cells[10].innerHTML;
+
+        }
+      }
+
+      function remove(){
+        table.row[rIndex].cell[1].innerHTML = document.getElementById("petName").value;
+        table.row[rIndex].cell[2].innerHTML = document.getElementById("statusName").value;
+        table.row[rIndex].cell[3].innerHTML = document.getElementById("pawrentName").value;
+        table.row[rIndex].cell[4].innerHTML = document.getElementById("breedName").value;
+        table.row[rIndex].cell[5].innerHTML = document.getElementById("genderName").value;
+        table.row[rIndex].cell[6].innerHTML = document.getElementById("dobName").value;
+        table.row[rIndex].cell[7].innerHTML = document.getElementById("phName").value;
+        table.row[rIndex].cell[8].innerHTML = document.getElementById("addressName").value;
+        table.row[rIndex].cell[9].innerHTML = document.getElementById("cityName").value;
+        table.row[rIndex].cell[10].innerHTML = document.getElementById("townName").value;
+      }
+
+      function edit(){
+        document.querySelector("myModel").setAttribute('style' , 'display: Block;')
+      }
+      
+      
+
+      
+
+    //   if(!checkEmptyInpt()){
+
+    //   }
+
+    // }
+
+
+    // edit Function
   </script>
 </body>
 
