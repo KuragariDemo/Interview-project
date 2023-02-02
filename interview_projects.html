@@ -45,12 +45,12 @@
     <div class="Box">
       <div class="TopHeading">
         <div class="Tleft">
-          <div class="flexbox2"><img src="Logo(2).png" /></div>
+          <div class="flexbox2"><img src="./img/Logo(2).png" /></div>
         </div>
         <div class="Tright">
-          <div class="flexbox1"><img src="Notifications.png" /></div>
+          <div class="flexbox1"><img src="./img/Notifications.png" /></div>
           <div class="userInfo">
-            <img src="user image.png" />
+            <img src="./img/user image.png" />
             <div class="Lisa">
               <div>Lisa</div>
               <div>Operator</div>
@@ -66,7 +66,7 @@
             <div class="list">Patient List</div>
             <div class="IMG">
               <input type="text" placeholder="Search Bar" class="search" />
-              <span class="searchImg"> <img src="search.png" /> </span>
+              <span class="searchImg"> <img src="./img/search.png" /> </span>
             </div>
             <div class="dropDown">
               <select class="dropdownSelect">
@@ -205,11 +205,11 @@
               <!-- <img src="more.png" width="25" height="auto"/>  -->
               <div class="dropdown">
                 <div onclick="myFunction()" class="dropbtn">
-                  <img src="more.png" width="25" height="auto" />
+                  <img src="./img/more.png" width="25" height="auto" />
                 </div>
                 <div id="myDropdown" class="dropdown-content">
-                  <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
-                  <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
+                  <a href="#home" onclick="editAlert()"> <img src="./img/editIcon.svg" width="25" height="auto"> Edit </a>
+                  <a href="#about" onclick="removeAlert()"> <img src="./img/deleteIcon.svg" width="25" height="auto"> Delete </a>
                 </div>
               </div>
             </td>
@@ -293,11 +293,11 @@
         cell10.innerHTML = `
         <div class="dropdown">
                 <div onclick="myFunction()" class="dropbtn">
-                  <img src="more.png" width="25" height="auto" />
+                  <img src="./img/more.png" width="25" height="auto" />
                 </div>
                 <div id="myDropdown" class="dropdown-content">
-                  <a href="#home" onclick="edit()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
-                  <a href="#about" onclick="remove()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
+                  <a href="#home" onclick="editAlert()"> <img src="editIcon.svg" width="25" height="auto"> Edit </a>
+                  <a href="#about" onclick="removeAlert()"> <img src="deleteIcon.svg" width="25" height="auto"> Delete </a>
                 </div>
         </div>
         `;
@@ -306,26 +306,26 @@
       }
     }
 
-    function selectedRowToInput() {
-      for (var i = 1; i < table.rows.length; i++) {
-        table.rows[i].onclick = function () {
-          rIndex = this.rowIndex;
-          document.getElementById("petName").value = this.cells[0].innerHTML;
-          document.getElementById("statusName").value = this.cells[1].innerHTML;
-          document.getElementById("pawrentName").value = this.cells[3].innerHTML;
-          document.getElementById("breedName").value = this.cells[4].innerHTML;
-          document.getElementById("gender").value = this.cells[5].innerHTML;
-          document.getElementById("dobName").value = this.cells[6].innerHTML;
-          document.getElementById("phName").value = this.cells[7].innerHTML;
-          document.getElementById("addressName").value = this.cells[8].innerHTML;
-          document.getElementById("cityName").value = this.cells[9].innerHTML;
-          document.getElementById("townName").value = this.cells[10].innerHTML;
+    // function selectedRowToInput() {
+    //   for (var i = 1; i < table.rows.length; i++) {
+    //     table.rows[i].onclick = function () {
+    //       rIndex = this.rowIndex;
+    //       document.getElementById("petName").value = this.cells[0].innerHTML;
+    //       document.getElementById("statusName").value = this.cells[1].innerHTML;
+    //       document.getElementById("pawrentName").value = this.cells[3].innerHTML;
+    //       document.getElementById("breedName").value = this.cells[4].innerHTML;
+    //       document.getElementById("gender").value = this.cells[5].innerHTML;
+    //       document.getElementById("dobName").value = this.cells[6].innerHTML;
+    //       document.getElementById("phName").value = this.cells[7].innerHTML;
+    //       document.getElementById("addressName").value = this.cells[8].innerHTML;
+    //       document.getElementById("cityName").value = this.cells[9].innerHTML;
+    //       document.getElementById("townName").value = this.cells[10].innerHTML;
 
           
 
-        }
-      }
-    }
+    //     }
+    //   }
+    // }
 
     //add function
 
@@ -407,7 +407,7 @@
 
 // edit delete model
     
-    function remove() {
+    function removeAlert() {
       Swal.fire({
         title: 'Are you sure want to delete this patient?',
         icon: 'question',
@@ -419,7 +419,7 @@
 
       })
     }
-    function edit() {
+    function editAlert() {
       Swal.fire({
         title: 'Are you sure want to edit this patient?',
         icon: 'info',
@@ -428,7 +428,9 @@
         cancelButtonColor: '#3085d6',
         confirmButtonText: 'Edit'
       }).then((result) => {
-
+        if(result.isConfirmed) {
+          edit();
+        }
       })
     }
 
@@ -471,7 +473,7 @@
       }
 
       function edit(){
-        document.querySelector("myModel").setAttribute('style' , 'display: Block;')
+        document.querySelector("#myModal").setAttribute('style' , 'display: Block;')
       }
       
       
